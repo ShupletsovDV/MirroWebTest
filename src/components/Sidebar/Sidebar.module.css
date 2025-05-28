@@ -1,0 +1,94 @@
+/* Sidebar.module.css */
+.sidebarContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: var(--bg-color); /* Добавьте желаемый фон */
+    transition: width 0.3s ease; /* Анимация ширины */
+    width: 300px; /* Полная ширина */
+    overflow: hidden;
+    border-right: 1px solid #fff;
+    border-radius: 0px 10px 10px 0;
+}
+
+.sidebarContainer.collapsed {
+    width: 70px; /* Свернутая ширина */
+}
+
+.topContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.headerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topContainer img {
+    width: 20%;
+  
+}
+
+.toggleButton {
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.sidebarBtn {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 8px;
+    border: none;
+    background: #282828;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebarBtn.collapsedBtn {
+    justify-content: center;
+    padding: none;
+}
+
+.sidebarBtn p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.bottomContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Анимация для текста */
+h2, .sidebarBtn p {
+    transition: opacity 0.2s ease;
+}
+
+.sidebarContainer.collapsed h2,
+.sidebarContainer.collapsed .sidebarBtn p {
+    opacity: 0;
+    width: 0;
+}
